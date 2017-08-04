@@ -1,8 +1,8 @@
 ﻿#Ordenadores separados por comas...
-$RemoteComputers = @("10.58.38.82","10.58.38.15")
+$RemoteComputers = @("192.168.1.15","192.168.1.16")
 
 #usuario y password dominio
-$UsuarioDominio = 'e9000443'
+$UsuarioDominio = 'Usuario1'
 $PasswordDominio = Read-Host -Prompt "Tu Password:" -AsSecureString 
 $CredencialesDominio = New-Object System.Management.Automation.PSCredential ($UsuarioDominio, $PasswordDominio)
 
