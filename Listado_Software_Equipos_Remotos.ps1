@@ -1,6 +1,4 @@
-﻿<# Cambiar la lista de ordenadores y el usuario del dominio #>
- 
- #Ordenadores separados por comas...
+﻿#Ordenadores separados por comas...
 $RemoteComputers = @("192.168.1.15","192.168.1.16")
 
 #usuario y password dominio
@@ -22,8 +20,8 @@ foreach ($computer in $RemoteComputers) {
         # Si el ordenador es de 64Bits. 
         if ($ENV:PROCESSOR_ARCHITECTURE -eq "AMD64") { 
 
-        Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, Uninstallstring | Format-List
-        Get-ItemProperty HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, Uninstallstring | Format-List
+            Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, Uninstallstring | Format-List
+            Get-ItemProperty HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, Uninstallstring | Format-List
 
         } 
 
