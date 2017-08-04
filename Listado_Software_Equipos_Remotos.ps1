@@ -1,4 +1,6 @@
-﻿#Ordenadores separados por comas...
+﻿<# Cambiar la lista de ordenadores y el usuario del dominio #>
+ 
+ #Ordenadores separados por comas...
 $RemoteComputers = @("192.168.1.15","192.168.1.16")
 
 #usuario y password dominio
