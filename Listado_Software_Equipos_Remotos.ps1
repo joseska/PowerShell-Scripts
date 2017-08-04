@@ -1,5 +1,5 @@
 ﻿#Ordenadores separados por comas...
-$RemoteComputers = @("10.58.38.82","10.58.38.74","10.58.38.8")
+$RemoteComputers = @("10.58.38.82","10.58.38.15")
 
 #usuario y password dominio
 $UsuarioDominio = 'e9000443'
@@ -20,15 +20,15 @@ foreach ($computer in $RemoteComputers) {
         # Si el ordenador es de 64Bits. 
         if ($ENV:PROCESSOR_ARCHITECTURE -eq "AMD64") { 
 
-        Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, InstallDate, Uninstallstring | Format-List
-        Get-ItemProperty HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, InstallDate, Uninstallstring | Format-List
+        Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, Uninstallstring | Format-List
+        Get-ItemProperty HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, Uninstallstring | Format-List
 
         } 
 
         # Si el ordenador es de 32Bits.
         ELSE {
             
-            Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, InstallDate, Uninstallstring | Format-List
+            Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName, Uninstallstring | Format-List
         
         }
        
